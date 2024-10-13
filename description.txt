@@ -1,0 +1,16 @@
+"""
+DESCRIPTION:
+
+Berechne verschiedene Aspekte von einem eingegebene Datum:
+
+Prüfe, ob das aktuelle Datum oder ein gegebenes Datum:
+- Dein Geburtstag - 'Happy Birthday!!!'
+- der vierte Mai in ISO Format - 'may the fourth'
+- der 14. März in ISO Format - 'Pi day'
+- der vierte Juli - 'fourth of  july'
+- der dritte Oktober im deutschen Format - 'Tag der deutschen Einheit'
+- ein palindrom Datum in deutschem Format
+ist
+
+Gib zusätzlich alle palindrom Daten im Bereich 01.01.2001 und 31.12.2192 aus.
+"""
