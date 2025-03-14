@@ -152,7 +152,7 @@ def main():
 
 
 
-    print('\n\nAll ISO palindrome dates between 2001-01-01 and 2192-12-31: ')
+    print('\n\nAll ISO palindrome dates between 2001-01-01 and 2292-12-31: ')
 
     iso_palindrome_dates = get_all_ISO_palindrome_dates()
     print(iso_palindrome_dates)

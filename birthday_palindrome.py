@@ -71,7 +71,7 @@ return a string with all ISO palindrome dates from 2001 until 2192
 '''
 def get_all_ISO_palindrome_dates():
     result=''
-    for year in range(2001, 2193):
+    for year in range(2001, 2293):
         for month in range(1,13):
             for day in range (1, 32):
                 try:
