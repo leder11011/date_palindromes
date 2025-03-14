@@ -2,7 +2,7 @@ from datetime import datetime
 
 
 from birthday_palindrome import open_birthday_file, format_date, check_birthday, check_date, fill_iso_date, \
-    check_given_date_today, get_all_palindrome_dates
+    check_given_date_today, get_all_palindrome_dates, get_all_ISO_palindrome_dates
 from birthday_palindrome import check_palindrome_date
 
 """
@@ -35,7 +35,7 @@ def main():
     birthdate_datetime = datetime.fromisoformat(birthdate)
 
     current_datetime = datetime.now()
-    my_date_iso, my_date_german, my_date_german_dots = format_date(current_datetime)
+    my_date_iso,my_date_iso_hyphen_filled, my_date_german, my_date_german_dots = format_date(current_datetime)
 
     birthday_m_d = str(birthdate_datetime.month) + '-' + str(birthdate_datetime.day)
     dates = {birthday_m_d: 'HAPPY BIRTHDAY!!!',
@@ -68,7 +68,7 @@ def main():
 
     is_special_day('today', current_datetime, birthday_m_d, birthdate_datetime, dates)
 
-    print(f'Today is: {my_date_iso}')
+    print(f'Today is: {my_date_iso_hyphen_filled}')
 
     check_palindrome_date('today', my_date_german, my_date_german_dots)
 
@@ -118,7 +118,7 @@ def main():
 
             # is_birthday_today(birthdate_datetime, current_datetime, input_datetime)
 
-            my_date_iso, my_date_german, my_date_german_dots = format_date(input_datetime)
+            my_date_iso, my_date_iso_hyphen_filled, my_date_german, my_date_german_dots = format_date(input_datetime)
 
             check_palindrome_date('given', my_date_german, my_date_german_dots)
 
@@ -143,7 +143,18 @@ def main():
 
     palindrome_dates_list = palindrome_dates.split()
 
-    print(f'#{len(palindrome_dates_list)}')
+    print(f'\n#{len(palindrome_dates_list)}')
+
+
+
+    print('\n\nAll ISO palindrome dates between 2001-01-01 and 2192-12-31: ')
+
+    iso_palindrome_dates = get_all_ISO_palindrome_dates()
+    print(iso_palindrome_dates)
+
+    iso_palindrome_dates_list = iso_palindrome_dates.split()
+
+    print(f'\n#{len(iso_palindrome_dates_list)}')
 
 """
 input/output

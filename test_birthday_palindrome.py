@@ -10,7 +10,7 @@ def test_fill_iso_date():
 
 def test_format_date():
     date = datetime.fromisoformat('2024-09-27')
-    assert format_date(date) == ('2024-9-27', '27092024', '27.09.2024')
+    assert format_date(date) == ('20240927', '2024-09-27', '27092024', '27.09.2024')
 
 
 def test_check_birthday():

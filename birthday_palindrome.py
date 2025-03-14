@@ -48,7 +48,7 @@ def get_all_palindrome_dates():
                     year_str, month_str, day_str = fill_iso_date(year, month, day)
 
                     date=datetime.fromisoformat(year_str + '-' + month_str + '-' + day_str) #ValueError: day is out of range for month
-                    my_date_iso, my_date_german, my_date_german_dots=format_date(date)
+                    my_date_iso,my_date_iso_hyphen, my_date_german, my_date_german_dots=format_date(date)
                     if palindrome(my_date_german):
                         result += (my_date_german_dots + ' ')
 
@@ -66,6 +66,37 @@ def get_all_palindrome_dates():
     return result
 
 
+'''
+return a string with all ISO palindrome dates from 2001 until 2192
+'''
+def get_all_ISO_palindrome_dates():
+    result=''
+    for year in range(2001, 2193):
+        for month in range(1,13):
+            for day in range (1, 32):
+                try:
+
+                    # raise ValueError('An example error') #inspired by chatGPT
+
+                    year_str, month_str, day_str = fill_iso_date(year, month, day)
+
+                    date=datetime.fromisoformat(year_str + '-' + month_str + '-' + day_str) #ValueError: day is out of range for month
+                    my_date_iso_filled,my_date_iso_hyphen, my_date_german, my_date_german_dots=format_date(date)
+                    if palindrome(my_date_iso_filled):
+                        result += (my_date_iso_hyphen + ' ')
+
+
+
+                except ValueError as e:
+                    try:
+                        raise MyError() #inspired by chatGPT
+                    # pass
+                    except MyError as e:
+                        #Exception for class MyError for descriptive reasons
+                        pass
+
+
+    return result
 
 
 '''
@@ -110,7 +141,12 @@ convert module datetime to
 '''
 def format_date(my_dateTime):
 
-    my_date_ISO = str(my_dateTime.year) + '-' + str(my_dateTime.month) + '-' + str(my_dateTime.day)
+    year, month, day = fill_iso_date(my_dateTime.year, my_dateTime.month, my_dateTime.day)
+
+    my_date_ISO_hyphen = str(my_dateTime.year) + '-' + str(my_dateTime.month) + '-' + str(my_dateTime.day)
+
+    my_date_ISO_hyphen_filled = str(year) + '-' + str(month) + '-' + str(day)
+
 
     day = my_dateTime.day
     month = my_dateTime.month
@@ -120,13 +156,23 @@ def format_date(my_dateTime):
 
     my_date_german_dots = (day_str + '.' + month_str + '.' + year_str)
     my_date_german_list = []
+
     for c in my_date_german_dots:
         my_date_german_list.append(c)
     while '.' in my_date_german_list:
         my_date_german_list.remove('.')
     my_date_german = ''.join(my_date_german_list)
+
+    my_date_ISO_list = []
+
+    for c in my_date_ISO_hyphen_filled:
+        my_date_ISO_list.append(c)
+    while '-' in my_date_ISO_list:
+        my_date_ISO_list.remove('-')
+    my_date_ISO_filled = ''.join(my_date_ISO_list)
+
     # my_date_german = str(my_dateTime.day) + str(my_dateTime.month) + str(my_dateTime.year)
-    return my_date_ISO, my_date_german, my_date_german_dots
+    return my_date_ISO_filled, my_date_ISO_hyphen_filled, my_date_german, my_date_german_dots
 
 
 def fill_iso_date(year, month, day):
