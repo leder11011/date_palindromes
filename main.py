@@ -1,5 +1,6 @@
-from datetime import datetime
+from datetime import datetime, time
 
+import time
 
 from birthday_palindrome import open_birthday_file, format_date, check_birthday, check_date, fill_iso_date, \
     check_given_date_today, get_all_palindrome_dates, get_all_ISO_palindrome_dates
@@ -155,6 +156,8 @@ def main():
     iso_palindrome_dates_list = iso_palindrome_dates.split()
 
     print(f'\n#{len(iso_palindrome_dates_list)}')
+
+    time.sleep(10)
 
 """
 input/output
