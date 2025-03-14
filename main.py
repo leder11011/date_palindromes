@@ -42,7 +42,28 @@ def main():
          '5-4': 'may the fourth be with you...',
          '3-14': 'Happy Pi-day!',
          '7-4': 'Independence day!',
-         '10-3': 'Tag der deutschen Einheit!'
+         '10-3': 'Tag der deutschen Einheit!',
+         '3-8' : "Woman's day",
+         '2-14': "Valentine's day",
+         '1-1': "Happy New Year!",
+         '12-24': 'Christmas Eve',
+         '12-25': 'Merry Christmas!',
+         '10-31': 'Happy Halloween!',
+         '11-11': 'Veterans Day!',
+         '12-31': 'Happy New Year\'s Eve!',
+         '4-22': 'Earth Day!',
+         '6-21': 'First Day of Summer!',
+         '9-22': 'First Day of Fall!',
+         '6-19': 'Juneteenth!',
+         '8-19': 'World Photography Day!',
+         '9-11': 'Patriot Day!',
+         '11-25': 'Thanksgiving Day (US)',
+         '1-20': 'Inauguration Day (USA)',
+         '2-2': 'Groundhog Day',
+         '4-1': 'April Fools\' Day',
+         '5-9': 'Mother\'s Day (US)',
+         '6-20': 'Father\'s Day (US)',
+         '7-20': 'Moon Landing Day'
          }
 
     is_special_day('today', current_datetime, birthday_m_d, birthdate_datetime, dates)

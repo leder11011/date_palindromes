@@ -76,17 +76,24 @@ checks:
 - a german date format palindrome date
 '''
 def check_date(my_dateTime, my_date_ISO, my_date_german, my_date_german_dots, date_label):
+    # Define the special dates and their corresponding messages in a dictionary
+    special_dates = {
+        (5, 4): 'May the fourth be with you...',
+        (3, 14): 'Happy Pi day!',
+        (7, 4): 'Independence Day!',
+        (10, 3): 'Tag der deutschen Einheit!'
+    }
+
+    # Print the date label
     print(f'{date_label.title()} is: ', my_date_ISO)
 
-    if my_dateTime.month == 5 and my_dateTime.day == 4:
-        print('May the fourth be with you...')
-    if my_dateTime.month == 3 and my_dateTime.day == 14:
-        print('Happy Pi day!')
-    if my_dateTime.month == 7 and my_dateTime.day == 4:
-        print('Independence Day!')
+    # Check if the current date is in the dictionary and print the corresponding message
+    date_key = (my_dateTime.month, my_dateTime.day)
+    if date_key in special_dates:
+        print(special_dates[date_key])
+
+    # Check for palindrome date (keep the original check_palindrome_date function)
     check_palindrome_date(date_label, my_date_german, my_date_german_dots)
-    if my_dateTime.month == 10 and my_dateTime.day == 3:
-        print('Tag der deutschen Einheit!')
 
 
 def check_palindrome_date(date_label, my_date_german, my_date_german_dots):
