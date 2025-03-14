@@ -36,3 +36,5 @@ def test_palindrome():
     assert palindrome('Regallager') == True
     assert palindrome('Reliefpfeiler') == True
     assert palindrome('abcde') == False
+    assert palindrome('20011002') == True
+    assert palindrome('10022001') == True

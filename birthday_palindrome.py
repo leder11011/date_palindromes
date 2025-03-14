@@ -133,6 +133,12 @@ def check_palindrome_date(date_label, my_date_german, my_date_german_dots):
         print(f'{date_label.title()} is palindrome day!')
 
 
+def check_ISO_palindrome_date(date_label, my_date_ISO_filled):
+    #print(f'German date {date_label} is: ', my_date_german_dots)
+    if palindrome(my_date_ISO_filled) == True:
+        print(f'{date_label.title()} is ISO palindrome day!')
+
+
 '''
 convert module datetime to
 - ISO format str
