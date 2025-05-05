@@ -23,7 +23,12 @@ def is_special_day(label, given_datetime, birthday_m_d, birthdate_datetime, date
 
 
 def is_today(input_datetime, current_datetime):
-    if input_datetime.year == current_datetime.year and input_datetime.month == current_datetime.month and input_datetime.day == input_datetime.day:
+    # debug
+    #print('current: ' + str(current_datetime))
+    #print('given: ' + str(input_datetime))
+    #########
+
+    if (input_datetime.year == current_datetime.year and input_datetime.month == current_datetime.month and input_datetime.day == current_datetime.day):
         print('Given day is today!')
 
 
