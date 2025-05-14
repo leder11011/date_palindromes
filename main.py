@@ -71,7 +71,8 @@ def main():
          '6-20': 'Father\'s Day (US)',
          '7-20': 'Moon Landing Day',
          '5-3': 'Save Social Day',
-         '5-8': ' Anniversary of the End of World War II'
+         '5-8': 'Anniversary of the End of World War II',
+         '4-10': 'Autism day'
          }
 
     is_special_day('today', current_datetime, birthday_m_d, birthdate_datetime, dates)
