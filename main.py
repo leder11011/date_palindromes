@@ -32,6 +32,16 @@ def is_today(input_datetime, current_datetime):
         print('Given day is today!')
 
 
+from pynput import keyboard
+
+def on_press(key):
+    print(f"Key {key} pressed.")
+    # Stop listener after the first key press
+    return False
+
+
+
+
 """
 sequential control and input/output
 """
@@ -168,6 +178,11 @@ def main():
     iso_palindrome_dates_list = iso_palindrome_dates.split()
 
     print(f'\n#{len(iso_palindrome_dates_list)}')
+
+    # Create a listener
+    #with keyboard.Listener(on_press=on_press) as listener:
+    #    listener.join()
+    #    print('Done.')
 
     time.sleep(10)
 
