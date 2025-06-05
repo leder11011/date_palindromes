@@ -82,7 +82,8 @@ def main():
          '7-20': 'Moon Landing Day',
          '5-3': 'Save Social Day',
          '5-8': 'Anniversary of the End of World War II',
-         '4-10': 'Autism day'
+         '4-10': 'Autism day',
+         '6-5': 'World Environment Day'
          }
 
     is_special_day('today', current_datetime, birthday_m_d, birthdate_datetime, dates)
@@ -179,10 +180,13 @@ def main():
 
     print(f'\n#{len(iso_palindrome_dates_list)}')
 
+    print('\n')
+    #print('Move outside of the terminal window and press a key to quit the app...')
+
     # Create a listener
     #with keyboard.Listener(on_press=on_press) as listener:
-    #    listener.join()
-    #    print('Done.')
+     #   listener.join()
+      #  print('Done.')
 
     time.sleep(10)
 
