@@ -222,7 +222,7 @@ def main():
      #   listener.join()
       #  print('Done.')
 
-    time.sleep(10)
+    #time.sleep(10)
 
 """
 input/output
